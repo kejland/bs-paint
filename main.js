@@ -49,6 +49,11 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
+let palette =  document.querySelectorAll(".palette div");
+let currentColour = document.querySelector(".current-brush");
+let paint = document.querySelectorAll(".canvas div");
+
+
 
 
 /****************************
@@ -61,6 +66,70 @@ while (count <= gridWidth * gridWidth) {
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 
+
+
+for (let i = 0; i < palette.length; i++){
+  palette[i].classList;
+  palette[i].addEventListener("click", function(){
+    // if (palette[i].classList[2] === "active"){
+      // palette[i].classList.toggle("active");
+
+      // console.log(palette[i].classList);
+
+      currentColour.classList.remove(currentColour.classList[1]);
+      //removes the class at the classList array index[1] -> which is where the colour name is edited
+      currentColour.classList.add("color-"+[i+1]);  
+      
+      //console.log(currentColour.classList);
+
+    //}
+
+  })
+}
+
+for (let i = 0; i < paint.length; i++){
+
+  // paint[i].addEventListener("dragstart", function(){
+  //   paint[i].classList.remove(paint[i].classList[1]);
+  //   paint[i].classList.add(currentColour.classList[1]);
+  // })
+
+  // paint[i].addEventListener("drag", function(){
+  //   paint[i].classList.remove(paint[i].classList[1]);
+  //   paint[i].classList.add(currentColour.classList[1]);
+  // })
+  
+  // paint[i].addEventListener("dragend", function(){
+  //   paint[i].classList[1] = "color-5";
+  // })
+
+  //addEventListener("mouseenter", function(){
+
+   //if clicked === true
+  //})
+
+  paint[i].addEventListener("mouseenter", function(){
+    paint[i].classList.remove(paint[i].classList[1]);
+    paint[i].classList.add(currentColour.classList[1]);
+  })
+
+  paint[i].addEventListener("mouseover", function(){
+    paint[i].classList.remove(paint[i].classList[1]);
+    paint[i].classList.add(currentColour.classList[1]);
+  })
+  
+  paint[i].addEventListener("mouseup", function(){
+    paint[i].classList[1] = "color-5";
+  })
+}
+
+//document.addEventListener("mousedown", function () {
+
+//});
+
+// div.addEventListener("mousedown", function(){
+//   div.classList.toggle("color-"+[i+1])
+// })
 
 
 /**************************

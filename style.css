@@ -51,21 +51,23 @@
 }
 
 .color-1 {
-
+  background-color: pink;
 }
 
 .color-2 {
-
+  background-color: paleturquoise;
 }
 
 .color-3 {
-
+  background-color: lightgoldenrodyellow;
 }
 
 .color-4 {
-
+  background-color: rgb(240, 201, 128);
 }
 
 .color-5 {
-
+  background-color: white;
 }
+
+
