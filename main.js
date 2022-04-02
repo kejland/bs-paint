@@ -15,7 +15,7 @@
  * To make the second one happen, the number to change
  * is the first argument to `repeat`, currently set at 10.
  */
-const gridWidth = 10;
+const gridWidth = 20;
 let count = 0;
 while (count <= gridWidth * gridWidth) {
   const canvas = document.querySelector('.canvas');
@@ -87,49 +87,35 @@ for (let i = 0; i < palette.length; i++){
   })
 }
 
+let isDrawing = false;
+
 for (let i = 0; i < paint.length; i++){
 
-  // paint[i].addEventListener("dragstart", function(){
-  //   paint[i].classList.remove(paint[i].classList[1]);
-  //   paint[i].classList.add(currentColour.classList[1]);
-  // })
-
-  // paint[i].addEventListener("drag", function(){
-  //   paint[i].classList.remove(paint[i].classList[1]);
-  //   paint[i].classList.add(currentColour.classList[1]);
-  // })
-  
-  // paint[i].addEventListener("dragend", function(){
-  //   paint[i].classList[1] = "color-5";
-  // })
-
-  //addEventListener("mouseenter", function(){
-
-   //if clicked === true
-  //})
-
-  paint[i].addEventListener("mouseenter", function(){
+  paint[i].addEventListener("mousedown", function(){
     paint[i].classList.remove(paint[i].classList[1]);
     paint[i].classList.add(currentColour.classList[1]);
+
+    isDrawing = true;
   })
 
-  paint[i].addEventListener("mouseover", function(){
-    paint[i].classList.remove(paint[i].classList[1]);
-    paint[i].classList.add(currentColour.classList[1]);
+  paint[i].addEventListener("mousemove", function(){
+    if (isDrawing === true){
+      paint[i].classList.remove(paint[i].classList[1]);
+      paint[i].classList.add(currentColour.classList[1]); 
+    }
+    
   })
-  
+
   paint[i].addEventListener("mouseup", function(){
-    paint[i].classList[1] = "color-5";
+    if (isDrawing === true){
+      paint[i].classList[1] = "color-5";
+      isDrawing = false;
+
+    }
   })
+  
 }
 
-//document.addEventListener("mousedown", function () {
-
-//});
-
-// div.addEventListener("mousedown", function(){
-//   div.classList.toggle("color-"+[i+1])
-// })
 
 
 /**************************
