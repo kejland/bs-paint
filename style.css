@@ -32,7 +32,7 @@
 
 .brush {
   display: flex;
-  flex-direction: column;
+  align-self: center; /* overrides the previous flexbox commands */
 }
 
 .icon {
