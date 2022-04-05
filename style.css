@@ -16,6 +16,7 @@
 .brush-selection {
   height: 70px;
   display: flex;
+  flex-direction: column;
 }
 
 .paint {
@@ -32,7 +33,8 @@
 
 .brush {
   display: flex;
-  align-self: center; /* overrides the previous flexbox commands */
+  align-self: center; 
+  /* overrides the previous flexbox commands */
 }
 
 .icon {
